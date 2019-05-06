@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfThrones.UI", "GameOfThrones.UI\GameOfThrones.UI.csproj", "{DA876573-36C1-4153-811D-58628F2E0CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfThrones.Models", "GameOfThrones.Models\GameOfThrones.Models.csproj", "{3A8AF0A9-9642-4540-8323-FF845C49E467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfThrones.Services", "GameOfThrones.Services\GameOfThrones.Services.csproj", "{8BDF3203-102D-434C-8850-7194CA880F02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfThrones.Services.Abstract", "GameOfThrones.Services.Abstract\GameOfThrones.Services.Abstract.csproj", "{1ECD7029-FEC2-4A00-B02E-0EBAC19B909D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA876573-36C1-4153-811D-58628F2E0CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA876573-36C1-4153-811D-58628F2E0CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA876573-36C1-4153-811D-58628F2E0CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA876573-36C1-4153-811D-58628F2E0CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8AF0A9-9642-4540-8323-FF845C49E467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8AF0A9-9642-4540-8323-FF845C49E467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8AF0A9-9642-4540-8323-FF845C49E467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8AF0A9-9642-4540-8323-FF845C49E467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BDF3203-102D-434C-8850-7194CA880F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BDF3203-102D-434C-8850-7194CA880F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BDF3203-102D-434C-8850-7194CA880F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BDF3203-102D-434C-8850-7194CA880F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ECD7029-FEC2-4A00-B02E-0EBAC19B909D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ECD7029-FEC2-4A00-B02E-0EBAC19B909D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ECD7029-FEC2-4A00-B02E-0EBAC19B909D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ECD7029-FEC2-4A00-B02E-0EBAC19B909D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AB0603E-72BC-4386-9252-0AC2238FAE29}
+	EndGlobalSection
+EndGlobal

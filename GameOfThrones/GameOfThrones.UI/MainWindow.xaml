@@ -1,0 +1,60 @@
+﻿<Window x:Class="GameOfThrones.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:GameOfThrones.UI"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        Title="MainWindow" Height="450" Width="800" mc:Ignorable="d" WindowStyle="None" ResizeMode="CanResize">
+
+    <!--Resources-->
+    <Window.Resources>
+        <DropShadowEffect  ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="5" x:Key="Shadow"/>
+
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <Style TargetType="ListBox">
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Background="DimGray">
+        <Grid Height="45" VerticalAlignment="Top" Background="LightGray">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="WindowClosing">
+                    <materialDesign:PackIcon Kind="Power" Effect="{StaticResource Shadow}"/>
+                </Button>
+            </StackPanel>
+            <TextBlock Text="Weather Online" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkSlateGray" FontSize="23" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Height="405">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="75*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox Grid.Column="0" Grid.Row="0" Name="characterNameTextBox" TextWrapping="Wrap" ToolTip="Enter a name of character" FontSize="20" TextChanged="FilterCharacter"/>
+
+            <ListBox Name="charactersList" Grid.Column="0" Grid.Row="1" Background="LightGray" Foreground="DarkSlateGray" 
+                     ItemsSource="{DynamicResource ResourceKey=characters}" MouseDoubleClick="DoubleClickLeftMouseButton" ToolTip="Double click to show information">
+                <ListBox.Resources>
+                    <col:ArrayList x:Key="characters"></col:ArrayList>
+                </ListBox.Resources>
+            </ListBox>
+
+            <WebBrowser Grid.Column="1" Grid.RowSpan="2" Source="http://viewers-guide.hbo.com/game-of-thrones/season-8/episode-4/map/location/18/dragonstone"/>
+        </Grid>
+    </StackPanel>
+</Window>

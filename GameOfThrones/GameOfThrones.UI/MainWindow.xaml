@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:GameOfThrones.UI"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
-        Title="MainWindow" Height="450" Width="800" mc:Ignorable="d" WindowStyle="None" ResizeMode="CanResize">
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        Title="MainWindow" Height="550" Width="1000" mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize">
 
     <!--Resources-->
     <Window.Resources>
@@ -22,19 +22,25 @@
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Visible"/>
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
         </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
     </Window.Resources>
 
-    <StackPanel Background="DimGray">
-        <Grid Height="45" VerticalAlignment="Top" Background="LightGray">
+    <StackPanel>
+        <Grid Height="45" VerticalAlignment="Top" Background="#FF2C3236">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="WindowClosing">
                     <materialDesign:PackIcon Kind="Power" Effect="{StaticResource Shadow}"/>
                 </Button>
             </StackPanel>
-            <TextBlock Text="Weather Online" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DarkSlateGray" FontSize="23" FontWeight="Bold"/>
+            <TextBlock Text="Game Of Thrones Book" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray" FontSize="23" FontWeight="Bold"/>
         </Grid>
 
-        <Grid Height="405">
+        <Grid Height="505">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="75*"/>
@@ -42,19 +48,29 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="5*"/>
-                <RowDefinition Height="60*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Grid.Column="0" Grid.Row="0" Name="characterNameTextBox" TextWrapping="Wrap" ToolTip="Enter a name of character" FontSize="20" TextChanged="FilterCharacter"/>
+            <TextBox Grid.Column="0" Grid.Row="0" Name="characterNameTextBox" TextWrapping="Wrap" ToolTip="Enter a name of character" 
+                     FontSize="18" TextChanged="FilterCharacter" Background="#FF2C3236" Foreground="LightGray"/>
 
-            <ListBox Name="charactersList" Grid.Column="0" Grid.Row="1" Background="LightGray" Foreground="DarkSlateGray" 
-                     ItemsSource="{DynamicResource ResourceKey=characters}" MouseDoubleClick="DoubleClickLeftMouseButton" ToolTip="Double click to show information">
+            <ListBox Name="charactersList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Background="#FF2C3236" Foreground="LightGray" 
+                     ItemsSource="{DynamicResource ResourceKey=characters}" MouseDoubleClick="DoubleClickLeftMouseButton" 
+                     ToolTip="Double click to show information" Cursor="Hand">
+                
                 <ListBox.Resources>
                     <col:ArrayList x:Key="characters"></col:ArrayList>
                 </ListBox.Resources>
             </ListBox>
 
-            <WebBrowser Grid.Column="1" Grid.RowSpan="2" Source="http://viewers-guide.hbo.com/game-of-thrones/season-8/episode-4/map/location/18/dragonstone"/>
+            <cefSharp:ChromiumWebBrowser Grid.Column="1" Grid.RowSpan="2" 
+                                         Address="http://viewers-guide.hbo.com/game-of-thrones/season-8/episode-4/map/location/18/dragonstone"/>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Background="#FF2C3236">
+                <TextBlock Text="Created by @askar_kerimtay" PreviewMouseLeftButtonDown="OpenInstagram" Cursor="Hand" ToolTip="Click to open Instagram"/>
+                <TextBlock Text="All rights reserved."/>
+            </StackPanel>
         </Grid>
     </StackPanel>
 </Window>

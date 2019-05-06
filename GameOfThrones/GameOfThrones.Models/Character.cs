@@ -24,7 +24,7 @@ namespace GameOfThrones.Models
         public int Birth { get; set; }
 
         [JsonProperty("alive")]
-        public bool Alive { get; set; }
+        public bool IsAlive { get; set; }
 
         [JsonProperty("createdAt")]
         public DateTime CreatedAt { get; set; }

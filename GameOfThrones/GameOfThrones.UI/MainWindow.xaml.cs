@@ -2,20 +2,10 @@
 using GameOfThrones.Services;
 using GameOfThrones.Services.Abstract;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GameOfThrones.UI
 {
@@ -26,7 +16,7 @@ namespace GameOfThrones.UI
         public MainWindow()
         {
             InitializeComponent();
-
+            
             FillListBox();
         }
         
@@ -40,11 +30,9 @@ namespace GameOfThrones.UI
             var selectedCharacterName = charactersList.SelectedItem.ToString();
 
             var selectedCharacter = Characters.FirstOrDefault(c => c.Name == selectedCharacterName);
-
-            if (selectedCharacter != null)
-            {
-                MessageBox.Show($"Name: {selectedCharacter.Name}\nHouse: {selectedCharacter.House}\nGender: {selectedCharacter.Gender}");
-            }
+            
+            CharacterWindow characterWindow = new CharacterWindow(selectedCharacter);
+            characterWindow.ShowDialog();
         }
 
         private void FilterCharacter(object sender, TextChangedEventArgs e)
@@ -66,6 +54,11 @@ namespace GameOfThrones.UI
             var charactersName = Characters.Select(c => c.Name);
 
             charactersList.ItemsSource = charactersName;
+        }
+
+        private void OpenInstagram(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/askar_kerimtay/");
         }
     }
 }

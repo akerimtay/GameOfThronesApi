@@ -32,7 +32,7 @@
 
     <StackPanel>
         <Grid Height="45" VerticalAlignment="Top" Background="#FF2C3236">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 3 0">
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="WindowClosing">
                     <materialDesign:PackIcon Kind="Power" Effect="{StaticResource Shadow}"/>
                 </Button>
@@ -58,7 +58,7 @@
             <ListBox Name="charactersList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Background="#FF2C3236" Foreground="LightGray" 
                      ItemsSource="{DynamicResource ResourceKey=characters}" MouseDoubleClick="DoubleClickLeftMouseButton" 
                      ToolTip="Double click to show information" Cursor="Hand">
-                
+
                 <ListBox.Resources>
                     <col:ArrayList x:Key="characters"></col:ArrayList>
                 </ListBox.Resources>

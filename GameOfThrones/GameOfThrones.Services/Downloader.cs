@@ -18,7 +18,7 @@ namespace GameOfThrones.Services
             {
                 try
                 {
-                    logger.LogMessage($"Запрос {url}");
+                    logger.LogMessage($"\nЗапрос {url}");
                     return client.DownloadString(url);
                 }
                 catch (WebException exception)

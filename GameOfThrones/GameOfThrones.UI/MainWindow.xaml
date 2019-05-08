@@ -33,7 +33,7 @@
     <StackPanel>
         <Grid Height="45" VerticalAlignment="Top" Background="#FF2C3236">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 3 0">
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="WindowClosing">
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Close" Click="WindowClosing">
                     <materialDesign:PackIcon Kind="Power" Effect="{StaticResource Shadow}"/>
                 </Button>
             </StackPanel>
